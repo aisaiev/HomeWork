@@ -55,5 +55,17 @@ namespace HomeWork
 
             Console.WriteLine($"Площадь кольца: {s3}");
         }
+
+        private static void Task6()
+        {
+            Console.Write("Введите двузначное число: ");
+            int number = int.Parse(Console.ReadLine());
+
+            int leftNumber = number / 10;
+            int rightNumber = number % 10;
+
+            Console.WriteLine($"Левое число: {leftNumber}");
+            Console.WriteLine($"Правое число: {rightNumber}");
+        }
     }
 }
