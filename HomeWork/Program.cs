@@ -40,5 +40,20 @@ namespace HomeWork
             int perimeter = 4 * x;
             Console.WriteLine($"Периметр квадрата: {perimeter}");
         }
+
+        private static void Task5()
+        {
+            const double pi = 3.14;
+            Console.Write("Введите радиус большего круга: ");
+            int r1 = int.Parse(Console.ReadLine());
+            Console.Write("Введите радиус меньшего круга: ");
+            int r2 = int.Parse(Console.ReadLine());
+
+            double s1 = pi * Math.Pow(r1, 2);
+            double s2 = pi * Math.Pow(r2, 2);
+            double s3 = s1 - s2;
+
+            Console.WriteLine($"Площадь кольца: {s3}");
+        }
     }
 }
