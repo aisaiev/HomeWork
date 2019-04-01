@@ -32,5 +32,13 @@ namespace HomeWork
             v1 = 'a';
             Console.WriteLine($"v1: {v1}");
         }
+
+        private static void Task4()
+        {
+            Console.Write("Введите длину стороны квадрата: ");
+            int x = int.Parse(Console.ReadLine());
+            int perimeter = 4 * x;
+            Console.WriteLine($"Периметр квадрата: {perimeter}");
+        }
     }
 }
