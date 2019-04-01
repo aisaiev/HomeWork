@@ -83,5 +83,27 @@ namespace HomeWork
             byte z = (byte)(x + y);
             Console.WriteLine($"z: {z}");
         }
+
+        private static void Task9()
+        {
+            int x = 1;
+            int y = 2;
+
+            //
+            //Первый способ с использованием третьей переменной.
+            //
+            int z = x;
+            x = y;
+            y = z;
+            Console.WriteLine($"x: {x}, y: {y}");
+
+            //
+            //Второй способ без использования третьей переменной.
+            //
+            x = x + y;
+            y = x - y;
+            x = x - y;
+            Console.WriteLine($"x: {x}, y: {y}");
+        }
     }
 }
