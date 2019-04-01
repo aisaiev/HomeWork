@@ -25,5 +25,12 @@ namespace HomeWork
             string str2 = "Привет " + str1;
             Console.WriteLine(str2);
         }
+
+        private static void Task3()
+        {
+            var v1 = 'v';
+            v1 = 'a';
+            Console.WriteLine($"v1: {v1}");
+        }
     }
 }
