@@ -67,5 +67,13 @@ namespace HomeWork
             Console.WriteLine($"Левое число: {leftNumber}");
             Console.WriteLine($"Правое число: {rightNumber}");
         }
+
+        private static void Task7()
+        {
+            int x = 1;
+            int y = 2;
+            long z = x + y;
+            Console.WriteLine($"z: {z}");
+        }
     }
 }
