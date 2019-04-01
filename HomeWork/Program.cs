@@ -75,5 +75,13 @@ namespace HomeWork
             long z = x + y;
             Console.WriteLine($"z: {z}");
         }
+
+        private static void Task8()
+        {
+            long x = 1;
+            long y = 2;
+            byte z = (byte)(x + y);
+            Console.WriteLine($"z: {z}");
+        }
     }
 }
