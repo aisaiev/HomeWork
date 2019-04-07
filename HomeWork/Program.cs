@@ -290,5 +290,19 @@ namespace HomeWork
             }
             Console.WriteLine($"Average numbers from {numberA} to {numberB} is {(double)sum / numbersCount}");
         }
+
+        private static void Task8()
+        {
+            int distanceInTheFirstDay = 10;
+            double denominator = 1.1;
+            int numberOfDays = 0;
+            double sum = 0;
+            while (sum <= 100)
+            {
+                numberOfDays++;
+                sum = distanceInTheFirstDay * (Math.Pow(denominator, numberOfDays) - 1) / (denominator - 1);
+            }
+            Console.WriteLine(numberOfDays);
+        }
     }
 }
