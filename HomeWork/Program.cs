@@ -224,5 +224,32 @@ namespace HomeWork
             } while (numberOfClients > 0);
             Console.WriteLine($"Number of delivery options: {numberOfDeliveryOptions}");
         }
+
+        private static void Task5()
+        {
+            Console.Write("Enter number A: ");
+            int numberA = int.Parse(Console.ReadLine());
+            Console.Write("Enter number B: ");
+            int numberB = int.Parse(Console.ReadLine());
+            int sum = 0;
+            List<int> oddNumbersList = new List<int>();
+            if (numberA < numberB)
+            {
+                for (int i = numberA; i <= numberB; i++)
+                {
+                    sum += i;
+                    if (i % 2 != 0)
+                    {
+                        oddNumbersList.Add(i);
+                    }
+                }
+                Console.WriteLine($"Sum numbers between A and B: {sum}");
+                Console.WriteLine($"Odd numbers between A and B: {string.Join(",", oddNumbersList)}");
+            }
+            else
+            {
+                Console.WriteLine("Enter numbers A<B");
+            }
+        }
     }
 }
