@@ -304,5 +304,29 @@ namespace HomeWork
             }
             Console.WriteLine(numberOfDays);
         }
+
+        private static void Task9()
+        {
+            Console.Write("Enter the first number: ");
+            int firstNumber = int.Parse(Console.ReadLine());
+            Console.Write("Enter the second number: ");
+            int secondNUmber = int.Parse(Console.ReadLine());
+            int result = 0;
+            int tempNumber = secondNUmber;
+            if (secondNUmber < 0)
+            {
+                tempNumber = -secondNUmber;
+            }
+            for (int i = 0; i < tempNumber; i++)
+            {
+                result += firstNumber;
+            }
+            if (secondNUmber < 0)
+            {
+                result = -result;
+            }
+
+            Console.WriteLine($"{firstNumber} * {secondNUmber} = {result}");
+        }
     }
 }
