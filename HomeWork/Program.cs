@@ -10,7 +10,6 @@ namespace HomeWork
     {
         static void Main(string[] args)
         {
-            Task6();
         }
 
         private static void Task1()
@@ -274,6 +273,22 @@ namespace HomeWork
             {
                 Console.WriteLine("Enter natural number");
             }
+        }
+
+        private static void Task7()
+        {
+            Console.Write("Enter number A: ");
+            int numberA = int.Parse(Console.ReadLine());
+            Console.Write("Enter number B: ");
+            int numberB = int.Parse(Console.ReadLine());
+            int sum = 0;
+            int numbersCount = 0;
+            for (int i = numberA; i <= numberB; i++)
+            {
+                sum += i;
+                numbersCount++;
+            }
+            Console.WriteLine($"Average numbers from {numberA} to {numberB} is {(double)sum / numbersCount}");
         }
     }
 }
