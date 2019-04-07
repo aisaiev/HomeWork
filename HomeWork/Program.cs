@@ -325,8 +325,20 @@ namespace HomeWork
             {
                 result = -result;
             }
-
             Console.WriteLine($"{firstNumber} * {secondNUmber} = {result}");
+        }
+
+        private static void Task10()
+        {
+            Console.Write("Enter number: ");
+            int number = int.Parse(Console.ReadLine());
+            for (int i = 1; i < number; i++)
+            {
+                if (Math.Pow(i, 2) < number)
+                {
+                    Console.WriteLine($"{i} * {i} = {Math.Pow(i, 2)}");
+                }
+            }
         }
     }
 }
