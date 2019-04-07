@@ -211,5 +211,18 @@ namespace HomeWork
                 return false;
             }
         }
+
+        private static void Task4()
+        {
+            Console.Write("Enter number of clients: ");
+            int numberOfClients = int.Parse(Console.ReadLine());
+            int numberOfDeliveryOptions = 1;
+            do
+            {
+                numberOfDeliveryOptions *= numberOfClients;
+                numberOfClients -= 1;
+            } while (numberOfClients > 0);
+            Console.WriteLine($"Number of delivery options: {numberOfDeliveryOptions}");
+        }
     }
 }
