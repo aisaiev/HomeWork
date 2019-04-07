@@ -152,5 +152,64 @@ namespace HomeWork
                     break;
             }
         }
+
+        private static void Task3()
+        {
+            Console.Write("Enter number: ");
+            int number = int.Parse(Console.ReadLine());
+
+            if (number < 0)
+            {
+                Console.WriteLine("Number is negative");
+                Console.WriteLine($"Is number simple: {IsNumberSimple(number)}");
+                Console.WriteLine($"Is number divided by 2,5,3,6,9 without reminder: " +
+                    $"{IsNumberDividedByTwoFiveThreeSixNineWithoutReminder(number)}");
+            }
+            else if (number > 0)
+            {
+                Console.WriteLine("Number is positive");
+                Console.WriteLine($"Is number simple: {IsNumberSimple(number)}");
+                Console.WriteLine($"Is number divided by 2,5,3,6,9 without reminder: " +
+                    $"{IsNumberDividedByTwoFiveThreeSixNineWithoutReminder(number)}");
+            }
+            else
+            {
+                Console.WriteLine("NUmber is zero");
+            }
+
+
+        }
+
+        private static bool IsNumberSimple(int number)
+        {
+            bool isNumberSimple = true;
+            for (int i = 2; i < number; i++)
+            {
+                if (number % i == 0)
+                {
+                    isNumberSimple = false;
+                }
+            }
+            if (isNumberSimple)
+            {
+                return isNumberSimple;
+            }
+            else
+            {
+                return isNumberSimple;
+            }
+        }
+
+        private static bool IsNumberDividedByTwoFiveThreeSixNineWithoutReminder(int number)
+        {
+            if (number % 2 == 0 && number % 5 == 0 && number % 3 == 0 && number % 6 == 0 && number % 9 == 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }
