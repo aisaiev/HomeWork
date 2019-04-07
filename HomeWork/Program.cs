@@ -10,6 +10,7 @@ namespace HomeWork
     {
         static void Main(string[] args)
         {
+            Task6();
         }
 
         private static void Task1()
@@ -249,6 +250,29 @@ namespace HomeWork
             else
             {
                 Console.WriteLine("Enter numbers A<B");
+            }
+        }
+
+        private static void Task6()
+        {
+            Console.Write("Enter natural number: ");
+            int number = int.Parse(Console.ReadLine());
+            int evenNumbersCounter = 0;
+            if (IsNumberSimple(number))
+            {
+                while (number != 0)
+                {
+                    if (number % 2 == 0)
+                    {
+                        evenNumbersCounter++;
+                    }
+                    number /= 10;
+                }
+                Console.WriteLine($"Number of even numbers: {evenNumbersCounter}");
+            }
+            else
+            {
+                Console.WriteLine("Enter natural number");
             }
         }
     }
