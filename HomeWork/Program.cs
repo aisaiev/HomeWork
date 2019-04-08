@@ -10,7 +10,6 @@ namespace HomeWork
     {
         static void Main(string[] args)
         {
-            Task12();
         }
 
         private static void Task1()
@@ -361,6 +360,20 @@ namespace HomeWork
             else
             {
                 return Fibonacci(number - 1) + Fibonacci(number - 2);
+            }
+        }
+
+        private static void Task11()
+        {
+            Console.Write("Enter number: ");
+            int number = int.Parse(Console.ReadLine());
+            for (int i = 0; i <= number; i++)
+            {
+                int fibonacci = Fibonacci(i);
+                if (fibonacci < number)
+                {
+                    Console.Write(fibonacci + " ");
+                }
             }
         }
     }
