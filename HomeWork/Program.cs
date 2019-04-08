@@ -10,7 +10,6 @@ namespace HomeWork
     {
         static void Main(string[] args)
         {
-            Task14();
         }
 
         private static void Task1()
@@ -411,6 +410,20 @@ namespace HomeWork
             {
                 Console.Write(item);
             }
+        }
+
+        private static void Task15()
+        {
+            Console.Write("Enter number: ");
+            int number = int.Parse(Console.ReadLine());
+            Console.Write("Enter power: ");
+            int power = int.Parse(Console.ReadLine());
+            int temp = 1;
+            for (int i = 0; i < power; i++)
+            {
+                temp *= number;
+            }
+            Console.WriteLine($"{number}^{power} = {temp}");
         }
     }
 }
