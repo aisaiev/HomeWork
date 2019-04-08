@@ -10,7 +10,7 @@ namespace HomeWork
     {
         static void Main(string[] args)
         {
-            Task13();
+            Task14();
         }
 
         private static void Task1()
@@ -394,6 +394,23 @@ namespace HomeWork
                 reversedNumber = 10 * reversedNumber + item;
             }
             Console.WriteLine(reversedNumber);
+        }
+
+        private static void Task14()
+        {
+            Console.Write("Enter number: ");
+            int number = int.Parse(Console.ReadLine());
+            List<int> intList = new List<int>();
+            do
+            {
+                intList.Add(number % 10);
+                number /= 10;
+            } while (number > 0);
+            intList.Reverse();
+            foreach (var item in intList)
+            {
+                Console.Write(item);
+            }
         }
     }
 }
