@@ -10,6 +10,7 @@ namespace HomeWork
     {
         static void Main(string[] args)
         {
+            Task13();
         }
 
         private static void Task1()
@@ -375,6 +376,24 @@ namespace HomeWork
                     Console.Write(fibonacci + " ");
                 }
             }
+        }
+
+        private static void Task13()
+        {
+            Console.Write("Enter number: ");
+            int number = int.Parse(Console.ReadLine());
+            int reversedNumber = 0;
+            List<int> intList = new List<int>();
+            do
+            {
+                intList.Add(number % 10);
+                number /= 10;
+            } while (number > 0);
+            foreach (var item in intList)
+            {
+                reversedNumber = 10 * reversedNumber + item;
+            }
+            Console.WriteLine(reversedNumber);
         }
     }
 }
