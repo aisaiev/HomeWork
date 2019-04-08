@@ -10,6 +10,7 @@ namespace HomeWork
     {
         static void Main(string[] args)
         {
+            Task12();
         }
 
         private static void Task1()
@@ -338,6 +339,28 @@ namespace HomeWork
                 {
                     Console.WriteLine($"{i} * {i} = {Math.Pow(i, 2)}");
                 }
+            }
+        }
+
+        private static void Task12()
+        {
+            Console.Write("Enter number: ");
+            int number = int.Parse(Console.ReadLine());
+            for (int i = 0; i < number; i++)
+            {
+                Console.Write(Fibonacci(i) + " ");
+            }
+        }
+
+        private static int Fibonacci(int number)
+        {
+            if (number <= 1)
+            {
+                return number;
+            }
+            else
+            {
+                return Fibonacci(number - 1) + Fibonacci(number - 2);
             }
         }
     }
