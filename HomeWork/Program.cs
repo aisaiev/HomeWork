@@ -506,5 +506,33 @@ namespace HomeWork
                 }
             }
         }
+
+        private static void Task20()
+        {
+            Console.Write("Enter number: ");
+            int number = int.Parse(Console.ReadLine());
+            double result = 0;
+            double denominator = 1;
+            for (double i = 1; i <= number; i++)
+            {
+                denominator *= 2;
+                if (i == 1)
+                {
+                    result += i / denominator;
+                }
+                else
+                {
+                    if (i % 2 == 0)
+                    {
+                        result -= i / denominator;
+                    }
+                    else
+                    {
+                        result += i / denominator;
+                    }
+                }
+            }
+            Console.WriteLine($"Sum is {result}");
+        }
     }
 }
