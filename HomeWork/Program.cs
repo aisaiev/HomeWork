@@ -443,5 +443,26 @@ namespace HomeWork
             intList.RemoveAt(intList.IndexOf(numberToDelete));
             Console.WriteLine($"Number {number} without {numberToDelete}: {int.Parse(string.Join("", intList))}");
         }
+
+        private static void Task17()
+        {
+            Console.Write("Enter number: ");
+            int number = int.Parse(Console.ReadLine());
+            int maxNumber = int.MinValue;
+            List<int> intList = new List<int>();
+            do
+            {
+                intList.Add(number % 10);
+                number /= 10;
+            } while (number > 0);
+            for (int i = 0; i < intList.Count; i++)
+            {
+                if (intList[i] > maxNumber)
+                {
+                    maxNumber = intList[i];
+                }
+            }
+            Console.WriteLine($"Maximum number is {maxNumber}");
+        }
     }
 }
