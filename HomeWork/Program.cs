@@ -482,5 +482,29 @@ namespace HomeWork
             } while (number > 1);
             Console.WriteLine(number);
         }
+
+        private static void Task19()
+        {
+            Random rnd = new Random();
+            int rndNumber = rnd.Next(0, 11);
+            while (true)
+            {
+                Console.Write("Enter number: ");
+                int number = int.Parse(Console.ReadLine());
+                if (number > rndNumber)
+                {
+                    Console.WriteLine("Your number is greater");
+                }
+                else if (number < rndNumber)
+                {
+                    Console.WriteLine("Your number is lower");
+                }
+                else
+                {
+                    Console.WriteLine($"You guessed the number {rndNumber}");
+                    return;
+                }
+            }
+        }
     }
 }
