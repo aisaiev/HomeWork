@@ -464,5 +464,23 @@ namespace HomeWork
             }
             Console.WriteLine($"Maximum number is {maxNumber}");
         }
+
+        private static void Task18()
+        {
+            Console.Write("Enter number: ");
+            int number = int.Parse(Console.ReadLine());
+            do
+            {
+                if (number % 2 == 0)
+                {
+                    number /= 2;
+                }
+                else
+                {
+                    number = (number * 3 + 1) / 2;
+                }
+            } while (number > 1);
+            Console.WriteLine(number);
+        }
     }
 }
