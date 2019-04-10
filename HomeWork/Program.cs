@@ -425,5 +425,23 @@ namespace HomeWork
             }
             Console.WriteLine($"{number}^{power} = {temp}");
         }
+
+        private static void Task16()
+        {
+            Console.Write("Enter number: ");
+            int number = int.Parse(Console.ReadLine());
+            Console.Write("Enter number to delete: ");
+            int numberToDelete = int.Parse(Console.ReadLine());
+            List<int> intList = new List<int>();
+            int tempNumber = number;
+            do
+            {
+                intList.Add(tempNumber % 10);
+                tempNumber /= 10;
+            } while (tempNumber > 0);
+            intList.Reverse();
+            intList.RemoveAt(intList.IndexOf(numberToDelete));
+            Console.WriteLine($"Number {number} without {numberToDelete}: {int.Parse(string.Join("", intList))}");
+        }
     }
 }
