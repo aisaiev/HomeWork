@@ -60,6 +60,42 @@ namespace HomeWork
                 }
             }
         }
+
+        private static void Task2()
+        {
+            double sum = 0;
+            string[] goods = new string[]
+            {
+                "Груши", "Яблоки", "Огурцы", "Помидоры", "Укроп",
+                "Петрушка", "Курица", "Сыр", "Масло", "Молоко"
+            };
+            double[] price = new double[]
+            {
+                40.5, 31.2, 21.8, 35, 150,
+                145, 200, 400, 81.40, 53.35
+            };
+            for (int i = 0; i < goods.Length; i++)
+            {
+                Console.WriteLine($"{i + 1}) {goods[i]} - {price[i]} грн.");
+            }
+            Console.WriteLine("Что берём? (вводите № товара; если ничего, то 0)");
+            while (true)
+            {
+                Console.Write("Товар: ");
+                int selectedGoods = int.Parse(Console.ReadLine());
+                if (selectedGoods != 0)
+                {
+                    Console.Write("Количество: ");
+                    double selectedGoodsQuantity = double.Parse(Console.ReadLine());
+                    sum += price[selectedGoods - 1] * selectedGoodsQuantity;
+                }
+                else
+                {
+                    break;
+                }
+            }
+            Console.WriteLine($"Сумма к оплате: {sum}");
+        }
     }
 
     enum Position
