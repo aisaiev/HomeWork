@@ -115,6 +115,47 @@ namespace HomeWork
                 }
             }
         }
+
+        private static string EncryptText(string text)
+        {
+            char[] encryptChars = new char[10] { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9' };
+            char[] cipher = new char[11] { ';', '+', '/', '.', '^', '@', '"', '!', '%', '#', '$' };
+            char[] textToEncrypt = text.ToCharArray();
+            char[] cipherText = new char[textToEncrypt.Length];
+            for (int i = 0; i < textToEncrypt.Length; i++)
+            {
+                int index = Array.IndexOf(encryptChars, textToEncrypt[i]);
+                if (index != -1)
+                {
+                    cipherText[i] = cipher[index];
+                }
+                else
+                {
+                    cipherText[i] = cipher[10];
+                }
+            }
+            return new string(cipherText);
+        }
+
+        private static string DecryptText(string text)
+        {
+            char[] encryptChars = new char[10] { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9' };
+            char[] cipher = new char[11] { ';', '+', '/', '.', '^', '@', '"', '!', '%', '#', '$' };
+            char[] textToDecrypt = text.ToCharArray();
+            char[] decryptedText = new char[textToDecrypt.Length];
+            for (int i = 0; i < decryptedText.Length; i++)
+            {
+                if (textToDecrypt[i] == '$')
+                {
+                    decryptedText[i] = 'a';
+                }
+                else
+                {
+                    decryptedText[i] = encryptChars[Array.IndexOf(cipher, textToDecrypt[i])];
+                }
+            }
+            return new string(decryptedText);
+        }
     }
 
     enum Position
