@@ -24,5 +24,20 @@ namespace HomeWork
             string resultStr = string.Join(" ", resultWords);
             Console.WriteLine(resultStr);
         }
+
+        private static void Task2()
+        {
+            string str = "aaaaaaaaaaaaaabbbbbbbbbbbbbmmmmmmmmmmmmmmmmmmmxyz";
+            char[] controlChars = new char[] { 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm' };
+            int numberOfErrors = 0;
+            foreach (var item in str)
+            {
+                if (!controlChars.Contains(item))
+                {
+                    numberOfErrors++;
+                }
+            }
+            Console.WriteLine($"{numberOfErrors}/{str.Length}");
+        }
     }
 }
