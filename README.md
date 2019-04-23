@@ -157,3 +157,34 @@ S = 1/2 - 2/4 + 3/8 - 4/16 + ... - ...
 
 5. Написать логику расшифровки зашифрованного в задании 4 текста.
 </details>
+
+<details>
+<summary>Home Work 18.04.2019</summary>
+1. Jaden Smith, the son of Will Smith, is the star of films such as The Karate Kid (2010) and After Earth (2013). Jaden is also known for some of his philosophy that he delivers via Twitter. When writing on Twitter, he is known for almost always capitalizing every word.
+
+Your task is to convert strings to how they would be written by Jaden Smith. The strings are actual quotes from Jaden Smith, but they are not capitalized in the same way he originally typed them.
+
+Example:
+
+Not Jaden-Cased: "How can mirrors be real if our eyes aren't real"
+Jaden-Cased:     "How Can Mirrors Be Real If Our Eyes Aren't Real"
+
+2. In a factory a printer prints labels for boxes. For one kind of boxes the printer has to use colors which, for the sake of simplicity, are named with letters from a to m.
+The colors used by the printer are recorded in a control string. For example a "good" control string would be aaabbbbhaijjjm meaning that the printer used three times color a, four times color b, one time color h then one time color a...
+Sometimes there are problems: lack of colors, technical malfunction and a "bad" control string is produced e.g. aaaxbbbbyyhwawiwjjjwwm with letters not from a to m.
+You have to write a function printer_error which given a string will output the error rate of the printer as a string representing a rational whose numerator is the number of errors and the denominator the length of the control string. Don't reduce this fraction to a simpler expression.
+The string has a length greater or equal to one and contains only letters from ato z.
+
+Example:
+"aaaaaaaaaaaaaabbbbbbbbbbbbbmmmmmmmmmmmmmmmmmmmxyz";
+the result is 3/49
+that means 3 is number of illegal characters,
+49 - number of all characters.
+
+Return the number (count) of vowels in the given string.
+We will consider a, e, i, o, and u as vowels for this Kata.
+The input string will only consist of lower case letters and/or spaces.
+
+Example:
+“abracadabra” - 5 vowels
+</details>
