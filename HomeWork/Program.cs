@@ -39,5 +39,20 @@ namespace HomeWork
             }
             Console.WriteLine($"{numberOfErrors}/{str.Length}");
         }
+
+        private static void Task3()
+        {
+            string str = "abracadabra";
+            char[] vowels = new char[] { 'a', 'e', 'i', 'o', 'u' };
+            int numberOfVowels = 0;
+            foreach (var item in str)
+            {
+                if (vowels.Contains(item))
+                {
+                    numberOfVowels++;
+                }
+            }
+            Console.WriteLine($"{str} - {numberOfVowels} vowels");
+        }
     }
 }
