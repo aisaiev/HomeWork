@@ -43,15 +43,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Aquatic.cs" />
-    <Compile Include="Arboreal.cs" />
-    <Compile Include="Arial.cs" />
+    <Compile Include="Animals\Aquatic.cs" />
+    <Compile Include="Animals\Arboreal.cs" />
+    <Compile Include="Animals\Arial.cs" />
     <Compile Include="Feeder.cs" />
-    <Compile Include="Mammal.cs" />
+    <Compile Include="Animals\Mammal.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Subterranean.cs" />
-    <Compile Include="Terrestrial.cs" />
+    <Compile Include="Animals\Subterranean.cs" />
+    <Compile Include="Animals\Terrestrial.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
