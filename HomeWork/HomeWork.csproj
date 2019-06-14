@@ -43,8 +43,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Enums\Color.cs" />
+    <Compile Include="Devices\AirConditioner.cs" />
+    <Compile Include="Devices\Fan.cs" />
+    <Compile Include="Devices\SmartLamp.cs" />
+    <Compile Include="Enums\LightIntensity.cs" />
+    <Compile Include="Model\Device.cs" />
+    <Compile Include="Devices\MultimediaDevice.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Devices\SmartSpeaker.cs" />
+    <Compile Include="Enums\Source.cs" />
+    <Compile Include="Enums\State.cs" />
+    <Compile Include="Devices\Tv.cs" />
+    <Compile Include="Enums\Speed.cs" />
+    <Compile Include="SmartHome.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

@@ -1,5 +1,4 @@
-﻿using HomeWork.Devices;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace HomeWork
 {
-    class Program
+    public enum Source
     {
-        static void Main(string[] args)
-        {
-        }
+        USB,
+        Bluetooth,
+        HDMI
     }
 }
