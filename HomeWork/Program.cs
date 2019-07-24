@@ -14,7 +14,7 @@ namespace HomeWork
     {
         static void Main(string[] args)
         {
-            new MatrixFactory().Run(5, 2);
+            new MatrixFactory().Run(5, 0, false);
         }
     }
 }

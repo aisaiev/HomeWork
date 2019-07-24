@@ -8,12 +8,12 @@ using System.Threading.Tasks;
 
 namespace HomeWork
 {
-    class MatrixFactory
+    public class MatrixFactory
     {
-        public void Run(int density, int speed)
+        public void Run(int density, int speed, bool isTwoFiguresInColumn)
         {
             Console.CursorVisible = false;
-            List<List<Node>> nodeList = GenerateFigures(density);
+            List<List<Node>> nodeList = GenerateFigures(density, isTwoFiguresInColumn);
             do
             {
                 for (int i = 0; i < nodeList.Count; i++)
@@ -31,12 +31,20 @@ namespace HomeWork
             } while (true);
         }
 
-        private List<List<Node>> GenerateFigures(int density)
+        private List<List<Node>> GenerateFigures(int density, bool isTwoFiguresInColumn)
         {
             List<List<Node>> nodeList = new List<List<Node>>();
             for (int i = 0; i < Console.WindowWidth / density; i++)
             {
                 nodeList.Add(GenereteFigure(i * density));
+                if (isTwoFiguresInColumn)
+                {
+                    nodeList.Add(GenereteFigure(i * density));
+                    foreach (var node in nodeList[nodeList.Count - 1])
+                    {
+                        node.Y += - (nodeList[nodeList.Count - 1].Count + 5);
+                    }
+                }
             }
             return nodeList;
         }
@@ -88,7 +96,7 @@ namespace HomeWork
         private List<Node> GenereteFigure(int offset)
         {
             List<Node> nodes = new List<Node>();
-            int size = Utils.GenerateRandomInt(5, 20) * -1;
+            int size = Utils.GenerateRandomInt(5, 10) * -1;
             for (int i = -1; i >= size; i--)
             {
                 if (i == -1)
@@ -120,7 +128,7 @@ namespace HomeWork
 
         private char GenerateSymbol()
         {
-            return (char)Utils.GenerateRandomInt(65, 91);
+            return (char)Utils.GenerateRandomInt(97, 123);
         }
     }
 }
