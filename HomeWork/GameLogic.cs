@@ -143,21 +143,9 @@ namespace HomeWork
             {
                 field.kbh.QueryKbH();
                 TimeSpan timeSpan = stopwatch.Elapsed;
-                Thread drawTimeInGameThread = new Thread(() =>
-                {
-                    this.drawer.DrawTimeInGame(field, timeSpan);
-                });
-                Thread drawScoreThread = new Thread(() =>
-                {
-                    this.drawer.DrawScore(field, this.score);
-                });
-                Thread drawFigureThread = new Thread(() =>
-                {
-                    this.drawer.DrawFigure(field.roadBorder);
-                });
-                drawTimeInGameThread.Start();
-                drawScoreThread.Start();
-                drawFigureThread.Start();
+                Task.Run(() => { this.drawer.DrawTimeInGame(field, timeSpan); }).Wait();
+                Task.Run(() => { this.drawer.DrawScore(field, this.score); }).Wait();
+                Task.Run(() => { this.drawer.DrawFigure(field.roadBorder); }).Wait();
                 Thread.Sleep(this.speed);
                 field.roadBorder.Move(MoveDirection.Down);
                 foreach (var otherCar in new List<Figure>(field.otherCars))

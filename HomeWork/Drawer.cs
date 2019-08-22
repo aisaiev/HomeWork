@@ -9,20 +9,15 @@ namespace HomeWork
 {
     public class Drawer
     {
-        private readonly object locker = new object();
-
         public void DrawFigure(Figure figure, Field field = null)
         {
             if (figure is MyCar || figure is RoadBorder)
             {
                 foreach (var node in figure.nodes)
                 {
-                    lock (locker)
-                    {
-                        Console.ForegroundColor = figure.Color;
-                        Console.SetCursorPosition(node.X, node.Y);
-                        Console.Write(figure.Symbol);
-                    }
+                    Console.ForegroundColor = figure.Color;
+                    Console.SetCursorPosition(node.X, node.Y);
+                    Console.Write(figure.Symbol);
                 }
             }
             else if (figure is OtherCar)
@@ -31,12 +26,9 @@ namespace HomeWork
                 {
                     if (item.Y >= field?.Height - field?.Height + 1)
                     {
-                        lock (locker)
-                        {
-                            Console.ForegroundColor = figure.Color;
-                            Console.SetCursorPosition(item.X, item.Y);
-                            Console.Write(figure.Symbol);
-                        }
+                        Console.ForegroundColor = figure.Color;
+                        Console.SetCursorPosition(item.X, item.Y);
+                        Console.Write(figure.Symbol);
                     }
                 }
             }
@@ -44,11 +36,8 @@ namespace HomeWork
 
         public void ClearNode(int x, int y)
         {
-            lock (locker)
-            {
-                Console.SetCursorPosition(x, y);
-                Console.Write(' ');
-            }
+            Console.SetCursorPosition(x, y);
+            Console.Write(' ');
         }
 
         public void DrawField(Field field)
@@ -83,32 +72,23 @@ namespace HomeWork
 
         public void DrawGameLevel(Field field, string gameLevel)
         {
-            lock (locker)
-            {
-                Console.SetCursorPosition(field.Width + 1, 1);
-                Console.ForegroundColor = ConsoleColor.White;
-                Console.Write($"Level: {gameLevel}");
-            }
+            Console.SetCursorPosition(field.Width + 1, 1);
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.Write($"Level: {gameLevel}");
         }
 
         public void DrawScore(Field field, int score)
         {
-            lock (locker)
-            {
-                Console.SetCursorPosition(field.Width + 1, 3);
-                Console.ForegroundColor = ConsoleColor.White;
-                Console.Write($"Score: {score}");
-            }
+            Console.SetCursorPosition(field.Width + 1, 3);
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.Write($"Score: {score}");
         }
 
         public void DrawTimeInGame(Field field, TimeSpan timeSpan)
         {
-            lock (locker)
-            {
-                Console.SetCursorPosition(field.Width + 1, 5);
-                Console.ForegroundColor = ConsoleColor.White;
-                Console.Write($"Time in game: {timeSpan.Minutes}m {timeSpan.Seconds}s");
-            }
+            Console.SetCursorPosition(field.Width + 1, 5);
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.Write($"Time in game: {timeSpan.Minutes}m {timeSpan.Seconds}s");
         }
 
         public void DrawGameOver(Field field)
