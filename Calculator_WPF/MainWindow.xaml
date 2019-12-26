@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Calculator_WPF"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="350" FontSize="20">
-    <Grid Background="#EDEDED">
+    <Grid Background="#EDEDED" ButtonBase.Click="Grid_Click">
         <Grid.ColumnDefinitions>
             <ColumnDefinition></ColumnDefinition>
             <ColumnDefinition></ColumnDefinition>
@@ -22,7 +22,7 @@
             <RowDefinition></RowDefinition>
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
-        <TextBlock Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="4" FontSize="50" FontWeight="DemiBold" TextAlignment="Right" Text="0" Padding="0, 0, 10, 0"></TextBlock>
+        <TextBlock Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="4" FontSize="50" FontWeight="DemiBold" TextAlignment="Right" Text="0" Padding="0, 0, 10, 0" Name="InputTextBlock"></TextBlock>
         <Button Grid.Column="0" Grid.Row="1" Content="%" Margin="1" Background="#F4F4F4" BorderBrush="#F4F4F4"></Button>
         <Button Grid.Column="1" Grid.Row="1" Content="CE" Margin="1" Background="#F4F4F4" BorderBrush="#F4F4F4"></Button>
         <Button Grid.Column="2" Grid.Row="1" Content="C" Margin="1" Background="#F4F4F4" BorderBrush="#F4F4F4"></Button>
@@ -59,17 +59,17 @@
         <Button Grid.Column="3" Grid.Row="4" Content="－"  Margin="1" Background="#F4F4F4" BorderBrush="#F4F4F4"></Button>
         <Button Grid.Column="3" Grid.Row="5" Content="＋"  Margin="1" Background="#F4F4F4" BorderBrush="#F4F4F4"></Button>
         <Button Grid.Column="3" Grid.Row="6" Content="＝"  Margin="1" Background="#E3C8A2" BorderBrush="#E3C8A2"></Button>
-        <Button Grid.Column="0" Grid.Row="3" Content="7"  Margin="1" Background="#FBFBFB" BorderBrush="#FBFBFB"></Button>
-        <Button Grid.Column="1" Grid.Row="3" Content="8"  Margin="1" Background="#FBFBFB" BorderBrush="#FBFBFB"></Button>
-        <Button Grid.Column="2" Grid.Row="3" Content="9"  Margin="1" Background="#FBFBFB" BorderBrush="#FBFBFB"></Button>
-        <Button Grid.Column="0" Grid.Row="4" Content="4"  Margin="1" Background="#FBFBFB" BorderBrush="#FBFBFB"></Button>
-        <Button Grid.Column="1" Grid.Row="4" Content="5"  Margin="1" Background="#FBFBFB" BorderBrush="#FBFBFB"></Button>
-        <Button Grid.Column="2" Grid.Row="4" Content="6"  Margin="1" Background="#FBFBFB" BorderBrush="#FBFBFB"></Button>
-        <Button Grid.Column="0" Grid.Row="5" Content="1"  Margin="1" Background="#FBFBFB" BorderBrush="#FBFBFB"></Button>
-        <Button Grid.Column="1" Grid.Row="5" Content="2"  Margin="1" Background="#FBFBFB" BorderBrush="#FBFBFB"></Button>
-        <Button Grid.Column="2" Grid.Row="5" Content="3"  Margin="1" Background="#FBFBFB" BorderBrush="#FBFBFB"></Button>
+        <Button Grid.Column="0" Grid.Row="3" Content="7"  Margin="1" Background="#FBFBFB" BorderBrush="#FBFBFB" Name="ButtonSeven"></Button>
+        <Button Grid.Column="1" Grid.Row="3" Content="8"  Margin="1" Background="#FBFBFB" BorderBrush="#FBFBFB" Name="ButtonEight"></Button>
+        <Button Grid.Column="2" Grid.Row="3" Content="9"  Margin="1" Background="#FBFBFB" BorderBrush="#FBFBFB" Name="ButtonNine"></Button>
+        <Button Grid.Column="0" Grid.Row="4" Content="4"  Margin="1" Background="#FBFBFB" BorderBrush="#FBFBFB" Name="ButtonFour"></Button>
+        <Button Grid.Column="1" Grid.Row="4" Content="5"  Margin="1" Background="#FBFBFB" BorderBrush="#FBFBFB" Name="ButtonFive"></Button>
+        <Button Grid.Column="2" Grid.Row="4" Content="6"  Margin="1" Background="#FBFBFB" BorderBrush="#FBFBFB" Name="ButtonSix"></Button>
+        <Button Grid.Column="0" Grid.Row="5" Content="1"  Margin="1" Background="#FBFBFB" BorderBrush="#FBFBFB" Name="ButtonOne"></Button>
+        <Button Grid.Column="1" Grid.Row="5" Content="2"  Margin="1" Background="#FBFBFB" BorderBrush="#FBFBFB" Name="ButtonTwo"></Button>
+        <Button Grid.Column="2" Grid.Row="5" Content="3"  Margin="1" Background="#FBFBFB" BorderBrush="#FBFBFB" Name="ButtonThree"></Button>
         <Button Grid.Column="0" Grid.Row="6" Content="±"  Margin="1" Background="#FBFBFB" BorderBrush="#FBFBFB"></Button>
-        <Button Grid.Column="1" Grid.Row="6" Content="0"  Margin="1" Background="#FBFBFB" BorderBrush="#FBFBFB"></Button>
+        <Button Grid.Column="1" Grid.Row="6" Content="0"  Margin="1" Background="#FBFBFB" BorderBrush="#FBFBFB" Name="ButtonZero"></Button>
         <Button Grid.Column="2" Grid.Row="6" Content="."  Margin="1" Background="#FBFBFB" BorderBrush="#FBFBFB"></Button>
     </Grid>
 </Window>
