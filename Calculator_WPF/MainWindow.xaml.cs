@@ -23,6 +23,58 @@ namespace Calculator_WPF
         public MainWindow()
         {
             InitializeComponent();
+
+            CommandBinding bind = new CommandBinding(MyCommand.ButtonClick);
+            bind.Executed += Bind_Executed;
+            this.CommandBindings.Add(bind);
+        }
+
+        private void Bind_Executed(object sender, ExecutedRoutedEventArgs e)
+        {
+            Button button = e.Source as Button;
+            switch (button.Name)
+            {
+                case "ButtonOne":
+                    IsInputTextBlockShouldBeCleared();
+                    this.InputTextBlock.Text += "1";
+                    break;
+                case "ButtonTwo":
+                    IsInputTextBlockShouldBeCleared();
+                    this.InputTextBlock.Text += "2";
+                    break;
+                case "ButtonThree":
+                    IsInputTextBlockShouldBeCleared();
+                    this.InputTextBlock.Text += "3";
+                    break;
+                case "ButtonFour":
+                    IsInputTextBlockShouldBeCleared();
+                    this.InputTextBlock.Text += "4";
+                    break;
+                case "ButtonFive":
+                    IsInputTextBlockShouldBeCleared();
+                    this.InputTextBlock.Text += "5";
+                    break;
+                case "ButtonSix":
+                    IsInputTextBlockShouldBeCleared();
+                    this.InputTextBlock.Text += "6";
+                    break;
+                case "ButtonSeven":
+                    IsInputTextBlockShouldBeCleared();
+                    this.InputTextBlock.Text += "7";
+                    break;
+                case "ButtonEight":
+                    IsInputTextBlockShouldBeCleared();
+                    this.InputTextBlock.Text += "8";
+                    break;
+                case "ButtonNine":
+                    IsInputTextBlockShouldBeCleared();
+                    this.InputTextBlock.Text += "9";
+                    break;
+                case "ButtonZero":
+                    IsInputTextBlockShouldBeCleared();
+                    this.InputTextBlock.Text += "0";
+                    break;
+            }
         }
 
         private void Grid_Click(object sender, RoutedEventArgs e)
@@ -79,6 +131,16 @@ namespace Calculator_WPF
             {
                 this.InputTextBlock.Text = string.Empty;
             }
+        }
+    }
+
+    public static class MyCommand
+    {
+        public static RoutedCommand ButtonClick { get; set; }
+
+        static MyCommand()
+        {
+            ButtonClick = new RoutedCommand(nameof(ButtonClick), typeof(Window));
         }
     }
 }
