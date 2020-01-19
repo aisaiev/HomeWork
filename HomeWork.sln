@@ -3,7 +3,31 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29411.108
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZzaDashboard", "ZzaDashboard\ZzaDashboard.csproj", "{CC64F8F6-AF2D-4985-8C29-CCB6F9D2A7CB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomersDataGridMvvm", "CustomersDataGridMvvm\CustomersDataGridMvvm.csproj", "{459F50EB-468C-4DA3-B490-2488E06C28C8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zza.Data", "Zza.Data\Zza.Data.csproj", "{180B93BA-BE22-498C-B17E-6A29F2519D30}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CC64F8F6-AF2D-4985-8C29-CCB6F9D2A7CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC64F8F6-AF2D-4985-8C29-CCB6F9D2A7CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC64F8F6-AF2D-4985-8C29-CCB6F9D2A7CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC64F8F6-AF2D-4985-8C29-CCB6F9D2A7CB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{459F50EB-468C-4DA3-B490-2488E06C28C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{459F50EB-468C-4DA3-B490-2488E06C28C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{459F50EB-468C-4DA3-B490-2488E06C28C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{459F50EB-468C-4DA3-B490-2488E06C28C8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{180B93BA-BE22-498C-B17E-6A29F2519D30}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{180B93BA-BE22-498C-B17E-6A29F2519D30}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{180B93BA-BE22-498C-B17E-6A29F2519D30}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{180B93BA-BE22-498C-B17E-6A29F2519D30}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
