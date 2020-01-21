@@ -12,7 +12,7 @@ using ZzaDashboard.Services;
 
 namespace ZzaDashboard.ViewModels
 {
-    public class CustomersViewModel
+    public class MainWindowViewModel
     {
         public ObservableCollection<Customer> Customers { get; set; }
 
@@ -20,7 +20,7 @@ namespace ZzaDashboard.ViewModels
 
         private ICustomersRepository Repository { get; set; }
 
-        public CustomersViewModel()
+        public MainWindowViewModel()
         {
             if (DesignerProperties.GetIsInDesignMode(new System.Windows.DependencyObject()))
             {
