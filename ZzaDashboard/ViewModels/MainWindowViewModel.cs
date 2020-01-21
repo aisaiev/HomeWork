@@ -16,8 +16,6 @@ namespace ZzaDashboard.ViewModels
     {
         public ObservableCollection<Customer> Customers { get; set; }
 
-        public Customer SelectedCustomer { get; set; }
-
         private ICustomersRepository Repository { get; set; }
 
         public MainWindowViewModel()
