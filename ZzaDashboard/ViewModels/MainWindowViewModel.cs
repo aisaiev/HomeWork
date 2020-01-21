@@ -24,13 +24,8 @@ namespace ZzaDashboard.ViewModels
             {
                 return;
             }
-            this.Customers = new ObservableCollection<Customer>();
             this.Repository = new CustomersRepository();
-            List<Customer> customers = this.Repository.GetCustomersAsync().Result;
-            foreach (var customer in customers)
-            {
-                this.Customers.Add(customer);
-            }
+            this.Customers = new ObservableCollection<Customer>(this.Repository.GetCustomersAsync().Result);
         }
     }
 }
