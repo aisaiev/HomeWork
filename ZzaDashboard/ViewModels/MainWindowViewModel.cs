@@ -12,11 +12,30 @@ using ZzaDashboard.Services;
 
 namespace ZzaDashboard.ViewModels
 {
-    public class MainWindowViewModel
+    public class MainWindowViewModel : INotifyPropertyChanged
     {
-        public ObservableCollection<Customer> Customers { get; set; }
+        private ObservableCollection<Customer> customers;
+
+        public ObservableCollection<Customer> Customers
+        {
+            get
+            {
+                return this.customers;
+            }
+            set
+            {
+                if (this.customers == value)
+                {
+                    return;
+                }
+                this.customers = value;
+                this.OnPropertyChanged(nameof(this.Customers));
+            }
+        }
 
         private ICustomersRepository Repository { get; set; }
+
+        public event PropertyChangedEventHandler PropertyChanged;
 
         public MainWindowViewModel()
         {
@@ -26,6 +45,15 @@ namespace ZzaDashboard.ViewModels
             }
             this.Repository = new CustomersRepository();
             this.Customers = new ObservableCollection<Customer>(this.Repository.GetCustomersAsync().Result);
+        }
+
+        protected virtual void OnPropertyChanged(string propertyName)
+        {
+            if (this.PropertyChanged is null)
+            {
+                return;
+            }
+            this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }
