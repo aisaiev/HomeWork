@@ -12,13 +12,32 @@ using Zza.Data;
 
 namespace CustomersDataGridMvvm.ViewModels
 {
-    public class CustomersViewModel
+    public class CustomersViewModel : INotifyPropertyChanged
     {
-        public ObservableCollection<Customer> Customers { get; set; }
+        private ObservableCollection<Customer> customers;
+
+        public ObservableCollection<Customer> Customers
+        {
+            get
+            {
+                return this.customers;
+            }
+            set
+            {
+                if (this.customers == value)
+                {
+                    return;
+                }
+                this.customers = value;
+                this.OnPropertyChanged(nameof(this.Customers));
+            }
+        }
 
         private ICustomersRepository Repository { get; set; }
 
         public ICommand GetCustomersCommand { get; set; }
+
+        public event PropertyChangedEventHandler PropertyChanged;
 
         public CustomersViewModel()
         {
@@ -26,7 +45,6 @@ namespace CustomersDataGridMvvm.ViewModels
             {
                 return;
             }
-            this.Customers = new ObservableCollection<Customer>();
             this.Repository = new CustomersRepository();
             this.GetCustomersCommand = new RelayCommand(GetCustomersCommandExecute, GetCustomersCommandCanExecute);
         }
@@ -38,11 +56,16 @@ namespace CustomersDataGridMvvm.ViewModels
 
         public async void GetCustomersCommandExecute(object obj)
         {
-            List<Customer> customers = await this.Repository.GetCustomersAsync();
-            foreach (var customer in customers)
+            this.Customers = new ObservableCollection<Customer>(await this.Repository.GetCustomersAsync());
+        }
+
+        protected virtual void OnPropertyChanged(string propertyName)
+        {
+            if (this.PropertyChanged is null)
             {
-                this.Customers.Add(customer);
+                return;
             }
+            this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }
